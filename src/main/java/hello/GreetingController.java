@@ -15,7 +15,13 @@ public class GreetingController {
     }
 
     @GetMapping("/greetingNew")
-    public String greetingNew(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+    public String greetingNew(@RequestParam(name="name", required=false, defaultValue="WorldNew") String name, Model model) {
+        model.addAttribute("name", name);
+        return "greeting";
+    }
+
+    @GetMapping("/greetingNewest")
+    public String greetingNewest(@RequestParam(name="name", required=false, defaultValue="WorldNewest") String name, Model model) {
         model.addAttribute("name", name);
         return "greeting";
     }
