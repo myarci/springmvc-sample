@@ -38,4 +38,9 @@ public class GreetingController {
         return "greeting";
     }
 
+    @GetMapping("/greetingNewNew234")
+    public String greetingNewNew234(@RequestParam(name="name", required=false, defaultValue="WorldNewNew234") String name, Model model) {
+        model.addAttribute("name", name);
+        return "greeting";
+    }
 }
